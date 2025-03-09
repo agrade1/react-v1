@@ -35,7 +35,7 @@ function Detail(){
                 series={contents.series}
                 stories={contents.stories}
                 urls={contents.urls}
-                thumbnail={`${contents.thumbnail?.path}.${contents.thumbnail?.extension}`}
+                thumbnail={`${contents.thumbnail.path}.${contents.thumbnail.extension}`}
             />
         </div>
     )
