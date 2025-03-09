@@ -13,7 +13,7 @@ function Characters({name, comics, description, events, series, stories, urls, t
                 <div>
                     <h2>comics</h2>
                     <ul>
-                        {comics.items.map((comic, index) => (
+                        {comics?.items.map((comic, index) => (
                             <li key={index}>
                                 <span>1{comic.name}</span>                  
                             </li>
@@ -23,7 +23,7 @@ function Characters({name, comics, description, events, series, stories, urls, t
                 <div>
                     <h2>series</h2>
                     <ul>
-                        {series.items.map((serie, index) => (
+                        {series?.items.map((serie, index) => (
                             <li key={index}>
                                 <span>1{serie.name}</span>                  
                             </li>
