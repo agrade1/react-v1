@@ -1,0 +1,48 @@
+.wrapper{
+    position: relative;
+    padding: 0px 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.imgWrap{
+    position: sticky;
+    top: 110px;
+    width: 40%;
+    max-height: 500px;
+}
+.contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 50px;
+}
+.contents div{
+    margin-bottom: 10px;
+    width: 100%;
+    height: fit-content;
+    color: white;
+}
+.contents h2{
+    font-size: 2em;
+    border-bottom:2px solid white;
+}
+.contents ul{
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1240px) {
+    .wrapper {
+      flex-direction: column;
+    }
+    .imgWrap{
+        position: unset;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+  }
