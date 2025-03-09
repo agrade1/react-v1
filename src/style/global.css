@@ -43,7 +43,9 @@ ul{
 .header a{
     position: absolute;
     left: 0;
-    font-size: 50px !important;
+    top: 50%;
+    transform: translate(50%,-50%);
+    font-size: 30px !important;
 }
 @media screen and (max-width: 1240px) {
     *{
