@@ -4,6 +4,7 @@ import Character from "../components/Character"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function Detail(){
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
     const [contents, setContents] = useState([]);
 
@@ -14,12 +15,14 @@ function Detail(){
                 )
             ).json();
             setContents(json.data.results[0]);
+            setLoading(false);
         }
     useEffect(() => {
         getDetail();
     }, [id])
     console.log(contents);
     return(
+        
         <div className="main">
             <h1 className="header">
                 Marvel Heroes
@@ -27,16 +30,22 @@ function Detail(){
                     🏠
                 </Link>
             </h1>
-            <Character 
-                name={contents.name}
-                comics={contents.comics}
-                description={contents.description}
-                events={contents.events}
-                series={contents.series}
-                stories={contents.stories}
-                urls={contents.urls}
-                thumbnail={`${contents.thumbnail?.path}.${contents.thumbnail?.extension}`}
-            />
+            {
+                loading ? (
+                    <h2 className="loading">loading...</h2>
+                ) : (
+                    <Character 
+                        name={contents.name}
+                        comics={contents.comics}
+                        description={contents.description}
+                        events={contents.events}
+                        series={contents.series}
+                        stories={contents.stories}
+                        urls={contents.urls}
+                        thumbnail={`${contents.thumbnail?.path}.${contents.thumbnail?.extension}`}
+                    />
+                )
+            }
         </div>
     )
 }

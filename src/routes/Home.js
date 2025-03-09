@@ -31,7 +31,7 @@ function Home() {
             </h1>
             {
                 loading ? (
-                    <h2>loading...</h2>
+                    <h2 className="loading">loading...</h2>
                 ) : (
                     <div className={styles.wrapper}>
                         <ul className={styles.heroes}>
